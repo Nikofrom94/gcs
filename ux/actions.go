@@ -62,6 +62,7 @@ var (
 	newCarriedEquipmentAction           *unison.Action
 	newCarriedEquipmentContainerAction  *unison.Action
 	newCharacterSheetAction             *unison.Action
+	newVehiculeSheetAction              *unison.Action
 	newCharacterTemplateAction          *unison.Action
 	newEquipmentContainerModifierAction *unison.Action
 	newEquipmentLibraryAction           *unison.Action
@@ -371,6 +372,14 @@ func registerActions() {
 		Title: i18n.Text("New Character Template"),
 		ExecuteCallback: func(_ *unison.Action, _ any) {
 			DisplayNewDockable(nil, NewTemplate("untitled"+model.TemplatesExt, model.NewTemplate()))
+		},
+	})
+	newVehiculeSheetAction = registerKeyBindableAction("new.veh.sheet", &unison.Action{
+		ID:    NewVehiculeSheetItemID,
+		Title: i18n.Text("New Vehicule Sheet"),
+		ExecuteCallback: func(_ *unison.Action, _ any) {
+			vehicule := model.NewVehicule()
+			DisplayNewDockable(nil, NewVehiculeSheet(vehicule.Profile.Name+model.SheetExt, vehicule))
 		},
 	})
 	newEquipmentContainerModifierAction = registerKeyBindableAction("new.eqm.container", &unison.Action{

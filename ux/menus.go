@@ -31,6 +31,7 @@ import (
 // Menu, Item & Action IDs
 const (
 	NewSheetItemID = unison.UserBaseID + iota
+	NewVehiculeSheetItemID
 	NewTemplateItemID
 	NewTraitsLibraryItemID
 	NewTraitModifiersLibraryItemID
@@ -181,6 +182,7 @@ func (s menuBarScope) setupFileMenu(bar unison.Menu) {
 	m := bar.Menu(unison.FileMenuID)
 	i := s.insertMenuItem(m, 0, newCharacterSheetAction.NewMenuItem(f))
 	i = s.insertMenuItem(m, i, newCharacterTemplateAction.NewMenuItem(f))
+	i = s.insertMenuItem(m, i, newVehiculeSheetAction.NewMenuItem(f))
 	i = s.insertMenuItem(m, i, newMarkdownFileAction.NewMenuItem(f))
 
 	i = s.insertMenuSeparator(m, i)

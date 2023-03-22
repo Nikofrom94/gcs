@@ -30,6 +30,7 @@ const (
 	BlockLayoutEquipmentKey            = "equipment"
 	BlockLayoutOtherEquipmentKey       = "other_equipment"
 	BlockLayoutNotesKey                = "notes"
+	BlockLayoutSpaceshipHullsKey       = "hulls"
 )
 
 var allBlockLayoutKeys = []string{
